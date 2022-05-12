@@ -1,17 +1,237 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.layout.ColumnConstraints?>
-<?import javafx.scene.layout.GridPane?>
-<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
 
-<GridPane gridLinesVisible="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/18">
-  <columnConstraints>
-    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-  </columnConstraints>
-  <rowConstraints>
-    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-  </rowConstraints>
-</GridPane>
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.chessgui.HelloController">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#d59c6e" height="50.0" layoutX="500.0" layoutY="100.0" stroke="BLACK" strokeType="INSIDE" width="50.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f8e0c8" height="50.0" layoutX="450.0" layoutY="100.0" stroke="BLACK" strokeType="INSIDE" width="50.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#d59c6e" height="50.0" layoutX="400.0" layoutY="100.0" stroke="BLACK" strokeType="INSIDE" width="50.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f8e0c8" height="50.0" layoutX="350.0" layoutY="100.0" stroke="BLACK" strokeType="INSIDE" width="50.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#d59c6e" height="50.0" layoutX="300.0" layoutY="100.0" stroke="BLACK" strokeType="INSIDE" width="50.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f8e0c8" height="50.0" layoutX="250.0" layoutY="100.0" stroke="BLACK" strokeType="INSIDE" width="50.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#d59c6e" height="50.0" layoutX="200.0" layoutY="100.0" stroke="BLACK" strokeType="INSIDE" width="50.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f8e0c8" height="50.0" layoutX="150.0" layoutY="100.0" stroke="BLACK" strokeType="INSIDE" width="50.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f8e0c8" height="50.0" layoutX="500.0" layoutY="150.0" stroke="BLACK" strokeType="INSIDE" width="50.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#d59c6e" height="50.0" layoutX="450.0" layoutY="150.0" stroke="BLACK" strokeType="INSIDE" width="50.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f8e0c8" height="50.0" layoutX="400.0" layoutY="150.0" stroke="BLACK" strokeType="INSIDE" width="50.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#d59c6e" height="50.0" layoutX="350.0" layoutY="150.0" stroke="BLACK" strokeType="INSIDE" width="50.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f8e0c8" height="50.0" layoutX="300.0" layoutY="150.0" stroke="BLACK" strokeType="INSIDE" width="50.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#d59c6e" height="50.0" layoutX="250.0" layoutY="150.0" stroke="BLACK" strokeType="INSIDE" width="50.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f8e0c8" height="50.0" layoutX="200.0" layoutY="150.0" stroke="BLACK" strokeType="INSIDE" width="50.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#d59c6e" height="50.0" layoutX="150.0" layoutY="150.0" stroke="BLACK" strokeType="INSIDE" width="50.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#d59c6e" height="50.0" layoutX="500.0" layoutY="200.0" stroke="BLACK" strokeType="INSIDE" width="50.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f8e0c8" height="50.0" layoutX="450.0" layoutY="200.0" stroke="BLACK" strokeType="INSIDE" width="50.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#d59c6e" height="50.0" layoutX="400.0" layoutY="200.0" stroke="BLACK" strokeType="INSIDE" width="50.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f8e0c8" height="50.0" layoutX="350.0" layoutY="200.0" stroke="BLACK" strokeType="INSIDE" width="50.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#d59c6e" height="50.0" layoutX="300.0" layoutY="200.0" stroke="BLACK" strokeType="INSIDE" width="50.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f8e0c8" height="50.0" layoutX="250.0" layoutY="200.0" stroke="BLACK" strokeType="INSIDE" width="50.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#d59c6e" height="50.0" layoutX="200.0" layoutY="200.0" stroke="BLACK" strokeType="INSIDE" width="50.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f8e0c8" height="50.0" layoutX="150.0" layoutY="200.0" stroke="BLACK" strokeType="INSIDE" width="50.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f8e0c8" height="50.0" layoutX="500.0" layoutY="243.0" stroke="BLACK" strokeType="INSIDE" width="50.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#d59c6e" height="50.0" layoutX="450.0" layoutY="243.0" stroke="BLACK" strokeType="INSIDE" width="50.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f8e0c8" height="50.0" layoutX="400.0" layoutY="243.0" stroke="BLACK" strokeType="INSIDE" width="50.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#d59c6e" height="50.0" layoutX="350.0" layoutY="243.0" stroke="BLACK" strokeType="INSIDE" width="50.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f8e0c8" height="50.0" layoutX="300.0" layoutY="243.0" stroke="BLACK" strokeType="INSIDE" width="50.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#d59c6e" height="50.0" layoutX="250.0" layoutY="243.0" stroke="BLACK" strokeType="INSIDE" width="50.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f8e0c8" height="50.0" layoutX="200.0" layoutY="243.0" stroke="BLACK" strokeType="INSIDE" width="50.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#d59c6e" height="50.0" layoutX="150.0" layoutY="243.0" stroke="BLACK" strokeType="INSIDE" width="50.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#d59c6e" height="50.0" layoutX="500.0" layoutY="293.0" stroke="BLACK" strokeType="INSIDE" width="50.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f8e0c8" height="50.0" layoutX="450.0" layoutY="293.0" stroke="BLACK" strokeType="INSIDE" width="50.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#d59c6e" height="50.0" layoutX="400.0" layoutY="293.0" stroke="BLACK" strokeType="INSIDE" width="50.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f8e0c8" height="50.0" layoutX="350.0" layoutY="293.0" stroke="BLACK" strokeType="INSIDE" width="50.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#d59c6e" height="50.0" layoutX="300.0" layoutY="293.0" stroke="BLACK" strokeType="INSIDE" width="50.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f8e0c8" height="50.0" layoutX="250.0" layoutY="293.0" stroke="BLACK" strokeType="INSIDE" width="50.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#d59c6e" height="50.0" layoutX="200.0" layoutY="293.0" stroke="BLACK" strokeType="INSIDE" width="50.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f8e0c8" height="50.0" layoutX="150.0" layoutY="293.0" stroke="BLACK" strokeType="INSIDE" width="50.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f8e0c8" height="50.0" layoutX="500.0" layoutY="343.0" stroke="BLACK" strokeType="INSIDE" width="50.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#d59c6e" height="50.0" layoutX="450.0" layoutY="343.0" stroke="BLACK" strokeType="INSIDE" width="50.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f8e0c8" height="50.0" layoutX="400.0" layoutY="343.0" stroke="BLACK" strokeType="INSIDE" width="50.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#d59c6e" height="50.0" layoutX="350.0" layoutY="343.0" stroke="BLACK" strokeType="INSIDE" width="50.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f8e0c8" height="50.0" layoutX="300.0" layoutY="343.0" stroke="BLACK" strokeType="INSIDE" width="50.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#d59c6e" height="50.0" layoutX="250.0" layoutY="343.0" stroke="BLACK" strokeType="INSIDE" width="50.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f8e0c8" height="50.0" layoutX="200.0" layoutY="343.0" stroke="BLACK" strokeType="INSIDE" width="50.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#d59c6e" height="50.0" layoutX="150.0" layoutY="343.0" stroke="BLACK" strokeType="INSIDE" width="50.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#d59c6e" height="50.0" layoutX="500.0" layoutY="393.0" stroke="BLACK" strokeType="INSIDE" width="50.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f8e0c8" height="50.0" layoutX="450.0" layoutY="393.0" stroke="BLACK" strokeType="INSIDE" width="50.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#d59c6e" height="50.0" layoutX="400.0" layoutY="393.0" stroke="BLACK" strokeType="INSIDE" width="50.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f8e0c8" height="50.0" layoutX="350.0" layoutY="393.0" stroke="BLACK" strokeType="INSIDE" width="50.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#d59c6e" height="50.0" layoutX="300.0" layoutY="393.0" stroke="BLACK" strokeType="INSIDE" width="50.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f8e0c8" height="50.0" layoutX="250.0" layoutY="393.0" stroke="BLACK" strokeType="INSIDE" width="50.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#d59c6e" height="50.0" layoutX="200.0" layoutY="393.0" stroke="BLACK" strokeType="INSIDE" width="50.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f8e0c8" height="50.0" layoutX="150.0" layoutY="393.0" stroke="BLACK" strokeType="INSIDE" width="50.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f8e0c8" height="50.0" layoutX="500.0" layoutY="436.0" stroke="BLACK" strokeType="INSIDE" width="50.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#d59c6e" height="50.0" layoutX="450.0" layoutY="436.0" stroke="BLACK" strokeType="INSIDE" width="50.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f8e0c8" height="50.0" layoutX="400.0" layoutY="436.0" stroke="BLACK" strokeType="INSIDE" width="50.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#d59c6e" height="50.0" layoutX="350.0" layoutY="436.0" stroke="BLACK" strokeType="INSIDE" width="50.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f8e0c8" height="50.0" layoutX="300.0" layoutY="436.0" stroke="BLACK" strokeType="INSIDE" width="50.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#d59c6e" height="50.0" layoutX="250.0" layoutY="436.0" stroke="BLACK" strokeType="INSIDE" width="50.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f8e0c8" height="50.0" layoutX="200.0" layoutY="436.0" stroke="BLACK" strokeType="INSIDE" width="50.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#d59c6e" height="50.0" layoutX="150.0" layoutY="436.0" stroke="BLACK" strokeType="INSIDE" width="50.0" />
+      <ImageView fitHeight="50.0" fitWidth="81.0" layoutX="150.0" layoutY="100.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../images/bRook.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="50.0" fitWidth="81.0" layoutX="200.0" layoutY="100.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../images/bKnight.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="50.0" fitWidth="81.0" layoutX="250.0" layoutY="100.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../images/bBishop.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="50.0" fitWidth="81.0" layoutX="300.0" layoutY="100.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../images/bKing.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="50.0" fitWidth="81.0" layoutX="350.0" layoutY="100.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../images/bQueen.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="50.0" fitWidth="81.0" layoutX="400.0" layoutY="100.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../images/bBishop.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="50.0" fitWidth="81.0" layoutX="450.0" layoutY="100.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../images/bKnight.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="50.0" fitWidth="81.0" layoutX="500.0" layoutY="100.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../images/bRook.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="50.0" fitWidth="81.0" layoutX="150.0" layoutY="150.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../images/bPawn.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="50.0" fitWidth="81.0" layoutX="200.0" layoutY="150.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../images/bPawn.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="50.0" fitWidth="81.0" layoutX="250.0" layoutY="150.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../images/bPawn.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="50.0" fitWidth="81.0" layoutX="300.0" layoutY="150.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../images/bPawn.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="50.0" fitWidth="81.0" layoutX="350.0" layoutY="150.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../images/bPawn.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="50.0" fitWidth="81.0" layoutX="400.0" layoutY="150.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../images/bPawn.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="50.0" fitWidth="81.0" layoutX="450.0" layoutY="150.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../images/bPawn.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="50.0" fitWidth="81.0" layoutX="500.0" layoutY="150.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../images/bPawn.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="50.0" fitWidth="81.0" layoutX="150.0" layoutY="436.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../images/wRook.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="50.0" fitWidth="81.0" layoutX="200.0" layoutY="436.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../images/wKnight.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="50.0" fitWidth="81.0" layoutX="250.0" layoutY="436.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../images/wBishop.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="50.0" fitWidth="81.0" layoutX="300.0" layoutY="436.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../images/wKing.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="50.0" fitWidth="81.0" layoutX="350.0" layoutY="436.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../images/wQuee.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="50.0" fitWidth="81.0" layoutX="400.0" layoutY="436.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../images/wBishop.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="50.0" fitWidth="81.0" layoutX="450.0" layoutY="436.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../images/wKnight.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="50.0" fitWidth="81.0" layoutX="500.0" layoutY="436.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../images/wRook.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="150.0" layoutY="393.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../images/wPawn.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="200.0" layoutY="393.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../images/wPawn.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="250.0" layoutY="393.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../images/wPawn.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="wPawn4" fitHeight="50.0" fitWidth="50.0" layoutX="300.0" layoutY="343.0" onMouseClicked="#onPawnClick" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../images/wPawn.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="350.0" layoutY="393.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../images/wPawn.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="400.0" layoutY="393.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../images/wPawn.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="450.0" layoutY="393.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../images/wPawn.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="500.0" layoutY="393.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../images/wPawn.png" />
+         </image>
+      </ImageView>
+      <Button layoutX="30.0" layoutY="385.0" mnemonicParsing="false" onAction="#onPawnClick" prefHeight="89.0" prefWidth="98.0" text="Button" />
+   </children>
+</AnchorPane>
