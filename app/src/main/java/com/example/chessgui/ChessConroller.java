@@ -6,22 +6,28 @@ import javafx.beans.Observable;
 import javafx.collections.ObservableList;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.effect.ColorAdjust;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
 
+import java.net.URL;
 import java.text.ParseException;
+import java.util.EventListener;
+import java.util.ResourceBundle;
 import java.util.Scanner;
 
-public class ChessConroller {
+public class ChessConroller implements Initializable {
     Scanner kb = new Scanner(System.in);
     core.classes.Board b = new Board();
-    Move m;
-    String input;
+    /*Move m;
+    String input;*/
 
     @FXML private TextField moveInput;
     @FXML private Button moveButton;
@@ -91,8 +97,19 @@ public class ChessConroller {
     @FXML private ImageView h6;
     @FXML private ImageView h7;
     @FXML private ImageView h8;
+    private ImageView oldSelected;
+    private ImageView selected = null;
+    private ColorAdjust red = new ColorAdjust(0, .99, .4, 0);
+    private ColorAdjust green = new ColorAdjust(.6, .99, .4, 0);
+    private EventHandler<MouseEvent> clicked = new EventHandler<MouseEvent>() {
+        @Override
+        public void handle(MouseEvent event) {
+
+        }
+    };
     private ImageView[][] images = new ImageView[8][8];
 
+    @FXML
     protected void imageArraySetup(){
         Integer row = 0;
         Integer col = 0;
@@ -104,18 +121,131 @@ public class ChessConroller {
                 if (row == null) row = 0;
                 if (col == null) col = 0;
                 images[7-row][col] = (ImageView) n;
-                System.out.println(n.toString()+ ": " + n.getId());
+                //System.out.println(n.toString()+ ": " + n.getId());
                 count++;
             }
         }
     }
 
     @FXML
+    protected void selectPiece(MouseEvent mouseEvent){
+        oldSelected = selected;
+        selected = (ImageView) mouseEvent.getSource();
+        if(selected.getEffect() != red) {
+            for (ImageView image[] : images) {
+                for (ImageView i : image) {
+                    i.setEffect(null);
+                }
+            }
+
+            previewMoves(selected);
+        }
+        else{
+            movePiece(oldSelected, selected);
+        }
+    }
+
+    protected void movePiece(ImageView from, ImageView to){
+        Integer fromRow = BoardPane.getRowIndex(from);
+        if(fromRow == null){fromRow = 0;}
+        fromRow = 7-fromRow;
+        Integer fromCol = BoardPane.getColumnIndex(from);
+        if(fromCol == null){ fromCol = 0;}
+        Integer toRow = BoardPane.getRowIndex(to);
+        if(toRow == null){toRow = 0;}
+        toRow = 7-toRow;
+        Integer toCol = BoardPane.getColumnIndex(to);
+        if(toCol == null){ toCol = 0;}
+        char fromFile = (char) (fromCol+97);
+        int fromRank = fromRow +1;
+        char toFile = (char) (toCol+97);
+        int toRank = toRow +1;
+
+        String input = "";
+        Move m = null;
+
+        if(b.getSquare((char)(fromCol+97),(char)(fromRow+49)) instanceof King){
+            input = "K" + fromFile + fromRank;
+        }
+        else if(b.getSquare((char)(fromCol+97),(char)(fromRow +49)) instanceof Queen){
+            input = "Q" + fromFile + fromRank;
+        }
+        else if(b.getSquare((char)(fromCol+97),(char)(fromRow+49)) instanceof Bishop){
+            input = "B" + fromFile + fromRank;
+        }
+        else if(b.getSquare((char)(fromCol+97),(char)(fromRow+49)) instanceof Knight){
+            input = "N" + fromFile + fromRank;
+        }
+        else if(b.getSquare((char)(fromCol+97),(char)(fromRow+49)) instanceof Rook){
+            input = "R" + fromFile + fromRank;
+        }
+        System.out.println(input);
+        input = input + toFile + toRank;
+        System.out.println(input);
+
+        try {
+            m = Move.parse(input);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        b.move(m);
+        updateBoard();
+    }
+
+    @FXML
+    protected void previewMoves(ImageView piece){
+        String from = "";
+        String input = "";
+        Move preview = null;
+        Integer row = BoardPane.getRowIndex(piece);
+        Integer col = BoardPane.getColumnIndex(piece);
+        if(row == null){ row = 0; }
+        row = 7-row;
+        if(col == null){ col = 0; }
+        char file = (char) (col+97);
+        int rank = row+1;
+
+        if(b.getSquare((char)(col+97),(char)(row+49)) instanceof King){
+            from = "K" + file + rank;
+        }
+        else if(b.getSquare((char)(col+97),(char)(row+49)) instanceof Queen){
+            from = "Q" + file + rank;
+        }
+        else if(b.getSquare((char)(col+97),(char)(row+49)) instanceof Bishop){
+            from = "B" + file + rank;
+        }
+        else if(b.getSquare((char)(col+97),(char)(row+49)) instanceof Knight){
+            from = "N" + file + rank;
+        }
+        else if(b.getSquare((char)(col+97),(char)(row+49)) instanceof Rook){
+            from = "R" + file + rank;
+        }
+        else{
+            return;
+        }
+        piece.setEffect(green);
+        for(char i = 97; i < 105; i++){
+            for(int j = 1; j < 9; j ++){
+                input = from + i + j;
+                try {
+                    preview = Move.parse(input);
+                } catch (ParseException e) {
+                    e.printStackTrace();
+                }
+                if(b.getSquare((char)(col+97),(char)(row+49)).isValidMove(b, preview)){
+                    System.out.println(input);
+                    images[j-1][i-97].setEffect(red);
+                }
+            }
+        }
+    }
+
+    @FXML
     protected void sendInput(){
-        //System.out.println(b.toString());
-        input = moveInput.getText().trim();
-        imageArraySetup();
+        String input = moveInput.getText().trim();
+        Move m = null;
         moveInput.setText("");
+
         try {
             m = Move.parse(input);
         } catch (ParseException e) {
@@ -130,35 +260,45 @@ public class ChessConroller {
 
     @FXML
     protected void updateBoard(){
-        BasePiece[][] pieces = b.getBoard();
+        for (ImageView image[] : images) {
+            for (ImageView i : image) {
+                i.setEffect(null);
+            }
+        }
+
         for(int i = 0; i < 8; i++){
             for(int j = 0; j < 8; j++) {
-                if(pieces[7-i][j] == null){
-                    images[i][j].setImage(null);
+                if(b.getSquare((char)(i+97),(char)(j+49)) == null){
+                    images[j][i].setImage(new Image("images/blank.png"));
                 }
                 else{
                     String color;
-                    if(pieces[7-i][j].getColor() == Color.BLACK){
+                    if(b.getSquare((char)(i+97),(char)(j+49)).getColor() == Color.BLACK){
                         color = "b";
                     }
                     else color = "w";
-                    if(pieces[7-i][j] instanceof King){
-                        images[i][j].setImage(new Image("images/" + color + "King.png"));
+                    if(b.getSquare((char)(i+97),(char)(j+49)) instanceof King){
+                        images[j][i].setImage(new Image("images/" + color + "King.png"));
                     }
-                    else if(pieces[7-i][j] instanceof Queen){
-                        images[i][j].setImage(new Image("images/" + color + "Queen.png"));
+                    else if(b.getSquare((char)(i+97),(char)(j+49)) instanceof Queen){
+                        images[j][i].setImage(new Image("images/" + color + "Queen.png"));
                     }
-                    else if(pieces[7-i][j] instanceof Bishop){
-                        images[i][j].setImage(new Image("images/" + color + "Bishop.png"));
+                    else if(b.getSquare((char)(i+97),(char)(j+49)) instanceof Bishop){
+                        images[j][i].setImage(new Image("images/" + color + "Bishop.png"));
                     }
-                    else if(pieces[7-i][j] instanceof Knight){
-                        images[i][j].setImage(new Image("images/" + color + "Knight.png"));
+                    else if(b.getSquare((char)(i+97),(char)(j+49)) instanceof Knight){
+                        images[j][i].setImage(new Image("images/" + color + "Knight.png"));
                     }
-                    else if(pieces[7-i][j] instanceof Rook){
-                        images[i][j].setImage(new Image("images/" + color + "Rook.png"));
+                    else if(b.getSquare((char)(i+97),(char)(j+49)) instanceof Rook){
+                        images[j][i].setImage(new Image("images/" + color + "Rook.png"));
                     }
                 }
             }
         }
+    }
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        imageArraySetup();
+        updateBoard();
     }
 }
