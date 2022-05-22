@@ -254,7 +254,6 @@ public class ChessConroller implements Initializable {
             System.out.println("Could not move the peice, please try again (q to quit).\n");
         }
         updateBoard();
-        System.out.println(b.toString());
     }
 
     @FXML
@@ -294,6 +293,7 @@ public class ChessConroller implements Initializable {
                 }
             }
         }
+        System.out.println(b.toString());
     }
     @Override
     public void initialize(URL location, ResourceBundle resources) {
