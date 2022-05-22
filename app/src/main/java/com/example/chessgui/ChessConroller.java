@@ -233,7 +233,6 @@ public class ChessConroller implements Initializable {
                     e.printStackTrace();
                 }
                 if(b.getSquare((char)(col+97),(char)(row+49)).isValidMove(b, preview)){
-                    System.out.println(input);
                     images[j-1][i-97].setEffect(red);
                 }
             }
